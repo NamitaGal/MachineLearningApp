@@ -37,4 +37,9 @@ data = {
   "body_mass":body_mass
 }
 input_data = pd.DataFrame(data,index=[0])
-input_data
+input_penguins = pd.concat([input_data,x],axis=0)
+with st.expander("input features"):
+  st.write("**input penguins**")
+  input_data
+  st.write("**combined penguins data**")
+  input_penguins
