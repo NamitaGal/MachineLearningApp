@@ -26,3 +26,16 @@ bill_length = st.sidebar.slider("bill length(mm)",32.1,59.6,43.9)
 bill_depth = st.sidebar.slider("bill depth(mm)",13.1,23.5,17.2)
 flipper_length = st.sidebar.slider("flipper length(mm)",172.0,231.0,201.0)
 body_mass = st.sidebar.slider("body mass(g)",2700.0,6300.0,4280.0)
+
+
+data = {
+  "island":island,
+  "gender":gender,
+  "bill_length":bill_length,
+  "bill_depth":bill_depth,
+  "flipper_length":flipper_length,
+  "body_mass":body_mass
+}
+input_data = pd.DataFrame(data=data,index[0])
+input_data
+  
