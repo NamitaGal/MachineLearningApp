@@ -70,7 +70,7 @@ model = RandomForestClassifier()
 model.fit(x_train,y)
 
 pred = model.predict(encoded_row)
-pred_prob = model.prediction_prob(encoded_row)
+pred_prob = model.predict_prob(encoded_row)
 pred_prob
 
 
