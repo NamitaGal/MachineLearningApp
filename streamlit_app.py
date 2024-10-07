@@ -72,7 +72,6 @@ model.fit(x_train,y)
 
 pred = model.predict(encoded_row)
 pred_prob = model.predict_proba(encoded_row)
-pred_prob
 
 df_prediction_prob = pd.DataFrame(pred_prob)
 df_prediction_prob.columns = ['Adelie','Chinstrap','Gentoo']
