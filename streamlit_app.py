@@ -69,8 +69,8 @@ with st.expander("data preparation"):
 model = RandomForestClassifier()
 model.fit(x_train,y)
 
-pred = model.predict(input_row)
-pred_prob = model.prediction_prob(input_row)
+pred = model.predict(encoded_row)
+pred_prob = model.prediction_prob(encoded_row)
 pred_prob
 
 
