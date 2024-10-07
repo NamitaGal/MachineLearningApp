@@ -10,9 +10,9 @@ with st.expander("data"):
   df = pd.read_csv("https://raw.githubusercontent.com/dataprofessor/data/master/penguins_example.csv")
   df
   st.write('**x**')
-  x = df.drop(['species'],axis=1)
+  x = df.drop('species',axis=1)
   x
   st.write('**y**')
-  y = df['species']
+  y = df.species
   y
   
