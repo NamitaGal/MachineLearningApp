@@ -36,6 +36,6 @@ data = {
   "flipper_length":flipper_length,
   "body_mass":body_mass
 }
-input_data = pd.DataFrame(data=data,index[0])
+input_data = pd.DataFrame(data=data,index=index[0])
 input_data
   
