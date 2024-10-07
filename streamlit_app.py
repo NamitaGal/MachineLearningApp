@@ -10,11 +10,11 @@ with st.expander("data"):
   df = pd.read_csv("https://raw.githubusercontent.com/dataprofessor/data/refs/heads/master/penguins_cleaned.csv")
   df
   st.write('**x**')
-  x = df.drop('species',axis=1)
-  x
+  x_raw = df.drop('species',axis=1)
+  x_raw
   st.write('**y**')
-  y = df.species
-  y
+  y_raw = df.species
+  y_raw
   
 with st.expander("visualization"):
   st.scatter_chart(data=df, x="bill_length_mm",y="body_mass_g",color="species")
@@ -37,18 +37,32 @@ data = {
   "sex":gender,
 }
 input_data = pd.DataFrame(data,index=[0])
-input_penguins = pd.concat([input_data,x],axis=0)
-
-encode = ['island','sex']
-df_penguins = pd.get_dummies(input_penguins,prefix=encode)
-encoded_row = df_penguins[:1]
+input_penguins = pd.concat([input_data,x_raw],axis=0)
 
 with st.expander("input features"):
   st.write("**input penguins**")
   input_data
   st.write("**combined penguins data**")
   input_penguins
+
+encode = ['island','sex']
+df_penguins = pd.get_dummies(input_penguins,prefix=encode)
+encoded_row = df_penguins[:1]
+
+target_mapper = {'Adelie':0,
+                 'Chinstrap':1,
+                 'Gentoo':2
+                }
+def target_encode(val):
+  return target_mapper[val]
+
+y = y_raw.apply(target_encode)
+
+with st.expander("data preparation"):
   st.write("**encoded input data**")
   encoded_row
+  st.write("**encoded output**")
+  y
+  
   
 
