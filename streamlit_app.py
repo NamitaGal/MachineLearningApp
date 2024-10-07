@@ -9,7 +9,7 @@ with st.expander("data"):
   st.write('**dataset**')
   df = pd.read_csv("https://raw.githubusercontent.com/dataprofessor/data/master/penguins_example.csv")
   df
-  st.write('**x**'):
+  st.write('**x**')
   x = df.drop(['species'],axis=1)
   x
   st.write('**y**')
