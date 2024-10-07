@@ -30,11 +30,11 @@ body_mass = st.sidebar.slider("body mass(g)",2700.0,6300.0,4280.0)
 
 data = {
   "island":island,
-  "gender":gender,
   "bill_length":bill_length,
   "bill_depth":bill_depth,
   "flipper_length":flipper_length,
-  "body_mass":body_mass
+  "body_mass":body_mass,
+  "gender":gender,
 }
 input_data = pd.DataFrame(data,index=[0])
 input_penguins = pd.concat([input_data,x],axis=0)
