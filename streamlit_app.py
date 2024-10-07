@@ -73,4 +73,14 @@ pred = model.predict(encoded_row)
 pred_prob = model.predict_proba(encoded_row)
 pred_prob
 
+df_prediction_prob = pd.DataFrame(prediction_prob)
+df_prediction_prob.columns = ['Adelie','Chinstrap','Gentoo']
+df_prediction_prob.rename(columns={0:'Adelie',
+                                   1:'Chinstrap',
+                                   2:'Gentoo'})
+st.subheader("predicted species")
+df_prediction_probs
+
+penguins_species = np.array(['Adelie','Chinstrap','Gentoo'])
+st.success(str(penguins_species(prediction[0])))
 
